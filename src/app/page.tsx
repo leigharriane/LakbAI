@@ -6,11 +6,10 @@ export default function Home() {
   return (
     <div className="bg-dark">
       <Nav />
-      <div className='mt-[100px]'>
-      
-      <Calendar />
+      <div className='mt-[100px] px-[80px] text-white font-sf'>
+        <Calendar />
       </div>
- 
+
     </div>
   )
 }
