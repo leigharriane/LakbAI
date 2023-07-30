@@ -39,3 +39,11 @@ body {
 body {
   background-color: #212121;
 }
+
+.br-pink {
+  border-left: 3px solid orange;
+  background-color: rgba(255, 166, 0, 0.538);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}

@@ -8,7 +8,7 @@ import { time } from 'console'
 import { start } from 'repl'
 
 const events = [
-	{ title: 'Event', start: new Date('2023-07-31T03:24:00'), end: new Date('2023-07-31T20:24:00') },
+	{ title: 'Event', start: new Date('2023-07-31T03:24:00'), end: new Date('2023-08-01T20:24:00'), classNames: 'flex flex-col br-pink' },
 ]
 
 export function Calendar() {
@@ -25,7 +25,11 @@ export function Calendar() {
 			events={events}
 			eventContent={renderEventContent}
 			editable={true}
-			eventTimeFormat={{ minute: '2-digit', hour: '2-digit', hour12: false }}
+			eventTimeFormat={{
+				hour: 'numeric',
+				minute: '2-digit',
+				meridiem: 'short'
+			}}
 		/>
 	)
 }
