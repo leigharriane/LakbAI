@@ -71,7 +71,7 @@ export default function ScheduleCalendar({
 
 	return (
 		<>
-			<div className="overflow-auto w-full flex px-6 py-4 flex-col mb-2 text-white" id="schedule">
+			<div className="overflow-auto w-full flex px-6 py-4 flex-col mb-2 text-white font-sf" id="schedule">
 				<div className="flex items-center self-center justify-between w-full text-white">
 					<div className='title-place ml-10'>Paris, France 3-Day Itinerary</div>
 					<div className='flex flex-row gap-[10px]'>
@@ -208,8 +208,27 @@ export default function ScheduleCalendar({
 													>
 														<div className={`w-full h-full opacity-25 absolute overflow-hidden`}
 															style={{ background: s.color }}></div>
-														<div className='opacity-100'>{s.title}</div>
-
+														<div className='flex flex-col opacity-100 font-medium'>
+															<div className='font-bold'>{s.title}</div>
+															<div className=''>{s.country}, {s.city}</div>
+															<div className='flex flex-row flex-wrap gap-[4px]'>
+																<div className='rounded-full text-[#212121] px-2' style={{ background: `${s.color}` }}>{s.detail}</div>
+																<div className='rounded-full text-[#212121] px-2' style={{ background: `${s.color}` }}>{s.people}</div>
+																<div className='rounded-full text-[#212121] px-2' style={{ background: `${s.color}` }}>P{s.price}</div>
+																{s.transporticon == true ? <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 41 24" fill="none">
+																	<path d="M32.2086 7.11808L27.4233 2.04805C27.1076 1.71542 26.7329 1.45165 26.3205 1.27183C25.9082 1.092 25.4663 0.999631 25.0201 1H11.5431C10.912 0.999525 10.2933 1.18449 9.75634 1.53415C9.21935 1.88382 8.78533 2.38435 8.50293 2.97964L6.40538 7.4092C6.17007 7.90721 6.04795 8.45619 6.04871 9.01262V15.3322C6.04871 16.2825 6.40659 17.1939 7.04362 17.8659C7.68065 18.5378 8.54465 18.9153 9.44555 18.9153H36.6203C37.5212 18.9153 38.3852 18.5378 39.0222 17.8659C39.6592 17.1939 40.0171 16.2825 40.0171 15.3322V11.7492C40.0171 10.7989 39.6592 9.88753 39.0222 9.21558C38.3852 8.54363 37.5212 8.16612 36.6203 8.16612H34.6289C34.1798 8.16886 33.7347 8.07764 33.3193 7.89774C32.9038 7.71785 32.5263 7.45285 32.2086 7.11808V7.11808Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	<path d="M14.1288 23C16.2393 23 17.9503 21.1953 17.9503 18.9691C17.9503 16.7428 16.2393 14.9381 14.1288 14.9381C12.0183 14.9381 10.3074 16.7428 10.3074 18.9691C10.3074 21.1953 12.0183 23 14.1288 23Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	<path d="M31.1136 23C33.2241 23 34.935 21.1953 34.935 18.9691C34.935 16.7428 33.2241 14.9381 31.1136 14.9381C29.003 14.9381 27.2921 16.7428 27.2921 18.9691C27.2921 21.1953 29.003 23 31.1136 23Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	<path d="M21.9838 12.0135H23.6823M39.9319 13.4512H38.9723C38.7916 13.4524 38.6125 13.416 38.4452 13.3442C38.2778 13.2723 38.1256 13.1664 37.997 13.0325C37.8685 12.8986 37.7662 12.7393 37.6961 12.5637C37.6259 12.388 37.5892 12.1996 37.5881 12.009C37.5892 11.8184 37.6259 11.63 37.6961 11.4544C37.7662 11.2787 37.8685 11.1194 37.997 10.9855C38.1256 10.8516 38.2778 10.7457 38.4452 10.6738C38.6125 10.602 38.7916 10.5656 38.9723 10.5668H39.6644M21.6654 23H36.7049M6.22675 23H18.7017M4.15044 23H4.49437M3.72583 13.8185H5.84886M4.99965 14.9382H5.84886M28.5992 8.21992H22.4085C22.2958 8.21992 22.1878 8.17273 22.1082 8.08874C22.0286 8.00474 21.9838 7.89082 21.9838 7.77203V4.63686C21.9838 4.51807 22.0286 4.40415 22.1082 4.32015C22.1878 4.23616 22.2958 4.18897 22.4085 4.18897H25.627C25.6828 4.18863 25.7382 4.19993 25.79 4.22222C25.8417 4.24451 25.8888 4.27735 25.9284 4.31886L28.9007 7.45404C28.9605 7.51668 29.0014 7.59672 29.018 7.68394C29.0346 7.77117 29.0262 7.86163 28.9938 7.94379C28.9615 8.02595 28.9067 8.09609 28.8364 8.14527C28.7661 8.19445 28.6835 8.22043 28.5992 8.21992V8.21992ZM10.3879 8.21992H18.5828C18.6954 8.21992 18.8034 8.17273 18.883 8.08874C18.9626 8.00474 19.0074 7.89082 19.0074 7.77203V4.63686C19.0074 4.51807 18.9626 4.40415 18.883 4.32015C18.8034 4.23616 18.6954 4.18897 18.5828 4.18897H12.0396C11.9644 4.18911 11.8905 4.21033 11.8256 4.25047C11.7607 4.2906 11.7071 4.34821 11.6702 4.41739L10.0185 7.55257C9.98219 7.62067 9.96342 7.69759 9.96402 7.77571C9.96463 7.85382 9.9846 7.93041 10.0219 7.99787C10.0593 8.06533 10.1127 8.12132 10.1769 8.16027C10.2411 8.19922 10.3138 8.21978 10.3879 8.21992Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	<g opacity="0.2">
+																		<path d="M2.06151 7.06433V9.30374M3.12303 8.18404H1" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	</g>
+																	<g opacity="0.2">
+																		<path d="M35.9291 2.80957V5.04898M36.9906 3.92928H34.8676" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+																	</g>
+																</svg> : ''}
+															</div>
+														</div>
 													</div>
 												)
 											})}

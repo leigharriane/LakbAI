@@ -26,6 +26,12 @@ export default function AddScheduleModal({
   const [startMinute, setStartMinute] = useState<number>(12)
   const [endHour, setEndHour] = useState<number>(0)
   const [endMinute, setEndMinute] = useState<number>(0)
+  const [city, setCity] = useState<string>('')
+  const [people, setPeople] = useState<number>(0)
+  const [price, setPrice] = useState<number>(0)
+  const [detail, setDetail] = useState<string>('')
+  const [country, setCountry] = useState<string>('')
+  const [transporticon, setTrasportIcon] = useState<boolean>(false)
 
   const [startSelectTimeIndex, setStartSelectTimeIndex] = useState<number>(0)
   const [endSelectTimeIndex, setEndSelectTimeIndex] = useState<number>(-1)
@@ -66,6 +72,12 @@ export default function AddScheduleModal({
         end: { hour: endHour, minute: endMinute },
         color: color,
         title: title,
+        country: country,
+        city: city,
+        people: people,
+        price: price,
+        detail: detail,
+        transporticon: transporticon,
       },
     }
     dispatch(addSchedule(schedule))
