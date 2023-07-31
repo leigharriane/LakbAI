@@ -65,6 +65,8 @@ export default function AddScheduleModal({
     e.preventDefault()
     setIsOpen(false)
     setTitle('')
+    setCity('')
+    setCountry('')
     const schedule: { date: string; data: tScheduleDetail } = {
       date: date,
       data: {
@@ -116,6 +118,38 @@ export default function AddScheduleModal({
             placeholder="Name"
             value={title}
             onChange={e => setTitle(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
+            placeholder="Country"
+            value={country}
+            onChange={e => setCountry(e.target.value)}
+            required
+          />
+           <input
+            type="text"
+            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
+            placeholder="City"
+            value={city}
+            onChange={e => setCity(e.target.value)}
+            required
+          />
+          <input
+            type="number"
+            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
+            placeholder="Number of People"
+            value={people}
+            onChange={e => setPeople(e.target.valueAsNumber)}
+            required
+          />
+          <input
+            type="number"
+            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
+            placeholder="Price"
+            value={price}
+            onChange={e => setPrice(e.target.valueAsNumber)}
             required
           />
           <div className="flex mt-3 relative items-center">

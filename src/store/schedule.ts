@@ -4,7 +4,7 @@ import { RootState } from './index'
 
 //Initial Schedule
 const initialState: tSchedule = {
-  '2023-07-31': [
+  '2023-08-21': [
     {
       start: { hour: 1, minute: 20 },
       end: { hour: 5, minute: 40 },
