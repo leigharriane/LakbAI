@@ -59,7 +59,7 @@ import Nav from '@/components/Nav'
 export default function Calendar() {
 	const { year, month, days } = useSelector(currentCalendar)
 	const [isSideCalendar, setIsSideCalendar] = useState<boolean>(false)
-	const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+	const [isOpenModal, setIsOpenModal] = useState<boolean>(true)
 	const [isDeleteOpen, setIsDeleteOpen] = useState<boolean>(false)
 	const [modalDate, setModalDate] = useState<string>(formatDay(new Date()))
 	const [timeIndex, setTimeIndex] = useState<number>(0)

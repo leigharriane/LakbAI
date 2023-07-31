@@ -111,58 +111,86 @@ export default function AddScheduleModal({
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
           </svg>
         </div>
-        <form className="py-3 px-5 w-full flex flex-col" onSubmit={submitHandle}>
-          <input
-            type="text"
-            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-2xl outline-none focus:border-b-blue-500"
-            placeholder="Name"
-            value={title}
-            onChange={e => setTitle(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
-            placeholder="Country"
-            value={country}
-            onChange={e => setCountry(e.target.value)}
-            required
-          />
-           <input
-            type="text"
-            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
-            placeholder="City"
-            value={city}
-            onChange={e => setCity(e.target.value)}
-            required
-          />
-          <input
-            type="number"
-            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
-            placeholder="Number of People"
-            value={people}
-            onChange={e => setPeople(e.target.valueAsNumber)}
-            required
-          />
-          <input
-            type="number"
-            className="w-full border-2 border-solid border-transparent border-b-zinc-200 bg-dark text-l outline-none focus:border-b-blue-500"
-            placeholder="Price"
-            value={price}
-            onChange={e => setPrice(e.target.valueAsNumber)}
-            required
-          />
-          <div className="flex mt-3 relative items-center">
+        <form className="py-3 px-5 w-full flex flex-col gap-[15px]" onSubmit={submitHandle}>
+          <div className="flex mt-3 gap-[10px] relative items-center">
+            <div className='flex flex-col gap-[4px]'>
+              <p className='text-xs'>Start Date</p>
+              <input
+                type="date"
+                value={date}
+                className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
+                onChange={e => {
+                  // setDate(e.target.value)
+                }}
+              />
+            </div>
+            <div className='flex flex-col gap-[4px]'>
+              <p className='text-xs'>End Date</p>
+              <input
+                type="date"
+                value={date}
+                className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
+                onChange={e => {
+                  // setDate(e.target.value)
+                }}
+              />
+            </div>
+          </div>
+          <div className='flex flex-col gap-[4px]'>
+            <p className='text-xs'>Country</p>
             <input
-              type="date"
-              value={date}
-              className="w-[150px] outline-none bg-dark text-white"
-              onChange={e => {
-                setDate(e.target.value)
-              }}
+              type="text"
+              className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
+              placeholder="Name"
+              value={title}
+              // onChange={e => setTitle(e.target.value)}
+              required
             />
+          </div>
+
+          <div className='flex flex-col gap-[4px]'>
+            <p className='text-xs'>City</p>
+            <input
+              type="text"
+              className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
+              placeholder="City"
+              value={city}
+              // onChange={e => setCity(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="flex mt-3 gap-[10px] relative items-center">
+            <div className='flex flex-col gap-[4px]'>
+              <p className='text-xs'>Number of Companions</p>
+              <input
+                type="number"
+                className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
+                placeholder="Number of People"
+                value={people}
+                // onChange={e => setPeople(e.target.valueAsNumber)}
+                required
+              />
+            </div>
+            <div className='flex flex-col gap-[4px]'>
+              <p className='text-xs'>Overall Budget</p>
+
+              <input
+                type="number"
+                className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
+                placeholder="Price"
+                value={price}
+                // onChange={e => setPrice(e.target.valueAsNumber)}
+                required
+              />
+            </div>
+          </div>
+
+
+
+          {/* <div className='flex relative items-center'>
             {isSelectStartTime && (
-              <div className="absolute top-[30px] left-[120px] w-[180px] h-[180px] rounded-md bg-dark shadow flex flex-col overflow-y-auto z-20">
+              <div className="absolute top-[30px] left-[0px] w-[180px] h-[180px] rounded-md bg-dark shadow flex flex-col overflow-y-auto z-20">
                 {selectTimes.map((time, index) => (
                   <div
                     className="p-2 text-sm cursor-pointer hover:bg-gray-700"
@@ -185,7 +213,7 @@ export default function AddScheduleModal({
             </span>
             -
             {isSelectEndTime && (
-              <div className="absolute top-[30px] left-[160px] w-[180px] h-[180px] rounded-md bg-dark shadow flex flex-col overflow-y-auto z-20">
+              <div className="absolute top-[30px] left-[80px] w-[180px] h-[180px] rounded-md bg-dark shadow flex flex-col overflow-y-auto z-20">
                 {selectTimes.slice(startSelectTimeIndex).map((time, index) => (
                   <div
                     className="p-2 text-sm cursor-pointer hover:bg-gray-700"
@@ -206,7 +234,7 @@ export default function AddScheduleModal({
             >
               {displayEndTime}
             </span>
-          </div>
+          </div> */}
           <div className="flex mt-5 z-10">
             {colors.map(clr => (
               <div
