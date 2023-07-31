@@ -2,13 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { tSchedule, tScheduleDetail } from '../../index'
 import { RootState } from './index'
 
+//Initial Schedule
 const initialState: tSchedule = {
-  '2022-01-01': [
+  '2023-07-31': [
     {
       start: { hour: 1, minute: 20 },
-      end: { hour: 1, minute: 40 },
-      color: 'pink',
-      title: 'HELLO PO TSCHEDULE SCHEDULE.TS',
+      end: { hour: 5, minute: 40 },
+      color: '#AD00FF',
+      title: 'SPEAK NOW TAYLOR SWIFT',
     },
   ],
 }

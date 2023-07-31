@@ -58,14 +58,14 @@ import Nav from '@/components/Nav'
 
 export default function Calendar() {
 	const { year, month, days } = useSelector(currentCalendar)
-	const [isSideCalendar, setIsSideCalendar] = useState<boolean>(true)
+	const [isSideCalendar, setIsSideCalendar] = useState<boolean>(false)
 	const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 	const [isDeleteOpen, setIsDeleteOpen] = useState<boolean>(false)
 	const [modalDate, setModalDate] = useState<string>(formatDay(new Date()))
 	const [timeIndex, setTimeIndex] = useState<number>(0)
 	const [month2, setMonth2] = useState<string>('')
 
-	
+
 	return (
 		<>
 			{/* <Nav />
@@ -82,9 +82,9 @@ export default function Calendar() {
 					isOpenModal={isOpenModal}
 					setIsOpenModal={setIsOpenModal}
 				/>
-				<div className={`p-5 flex flex-col mt-[65px] ${isSideCalendar ? 'block' : 'hidden'}`}>
-					<SideCalendarTitle year={year} month={month} />
-					<SideCalendar days={days} />
+				<div className={`p-5 flex flex-col mt-[65px] w-[200px] ${isSideCalendar ? 'block' : 'hidden'}`}>
+					{/* <SideCalendarTitle year={year} month={month} />
+					<SideCalendar days={days} /> */}
 				</div>
 				<div className="flex flex-col h-full overflow-x-scroll flex-1 pr-2">
 					<ScheduleCalendar
@@ -94,6 +94,11 @@ export default function Calendar() {
 						setIsOpenModal={setIsOpenModal}
 						isDeleteOpen={isDeleteOpen}
 						setIsDeleteOpen={setIsDeleteOpen}
+						year={year}
+						month={month}
+						isSideCalendar={isSideCalendar}
+						setIsSideCalendar={setIsSideCalendar}
+						isOpenModal={isOpenModal}
 					/>
 				</div>
 				<AddScheduleModal

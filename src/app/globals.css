@@ -26,10 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-@import url("https://fonts.cdnfonts.com/css/sf-ui-display");
+@import url('https://fonts.cdnfonts.com/css/sf-ui-display');
 
 .font-sf {
-  font-family: "SF UI Display", sans-serif;
+  font-family: 'SF UI Display', sans-serif;
 }
 
 .bg-dark {
@@ -46,4 +46,16 @@ body {
   border-top: none;
   border-bottom: none;
   border-right: none;
+}
+
+.title-place {
+  color: #fff;
+  font-family: SF UI Display;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.bg-fade {
+ background: rgba(0, 0, 0, 0.50);
 }
