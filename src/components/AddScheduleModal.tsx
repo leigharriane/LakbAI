@@ -97,14 +97,14 @@ export default function AddScheduleModal({
         className={`
         shadow-2xl rounded-lg z-50 top-[150px] left-8 m-auto w-[350px] bg-dark text-white flex flex-col`}
       >
-        <div className="w-full mb-3 py-1 px-3 bg-gray-200 rounded-t-lg">
+        <div className="w-full mb-3 py-1 px-3 bg-dark rounded-t-lg">
           <svg
             className="ml-auto cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             height="20px"
             viewBox="0 0 24 24"
             width="20px"
-            fill="#222222"
+            fill="#FFFFFF"
             onClick={() => setIsOpen(false)}
           >
             <path d="M0 0h24v24H0V0z" fill="none" />
@@ -248,10 +248,10 @@ export default function AddScheduleModal({
           </div>
           <div className="w-full mb-3 mt-8 flex">
             <button
-              className="ml-auto bg-blue-500 text-white px-5 py-1 text-sm rounded hover:bg-blue-700"
+              className="w-full bg-blue-500 text-white px-5 py-2 text-sm rounded hover:bg-blue-700"
               type="submit"
             >
-              Done
+              Generate Itinerary
             </button>
           </div>
         </form>
