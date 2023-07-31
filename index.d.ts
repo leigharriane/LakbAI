@@ -15,7 +15,7 @@ export type tHours = {
 
 export type tTime = { hour: number; minute: number }
 
-export type tRangeColor = 'red' | 'orange' | 'green' | 'blue' | 'brown' | 'pink'
+export type tRangeColor = '#FF003D' | '#D91BEA' | '#5EE45C' | '#64BFF2' | '#E9A800' | '#AD00FF'
 export type tScheduleDetail = { start: tTime; end: tTime; color: tRangeColor; title: string }
 
 export type tSchedule = { [key: string]: Array<tScheduleDetail> }
