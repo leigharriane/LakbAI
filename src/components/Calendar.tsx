@@ -12,6 +12,8 @@ import AddScheduleButton from '@/components/AddScheduleButton'
 import AddScheduleModal from '../components/AddScheduleModal'
 import formatDay from '@/app/util/formatDay'
 import Nav from '@/components/Nav'
+import AddActivityModal from './AddActivityModal'
+import EditActivityModal from './EditActivityModal'
 
 export default function Calendar() {
 	const { year, month, days } = useSelector(currentCalendar)
@@ -21,7 +23,8 @@ export default function Calendar() {
 	const [modalDate, setModalDate] = useState<string>(formatDay(new Date()))
 	const [timeIndex, setTimeIndex] = useState<number>(0)
 	const [month2, setMonth2] = useState<string>('')
-
+	const [isOpenModal2, setIsOpenModal2] = useState<boolean>(false)
+	const [isOpenModal3, setIsOpenModal3] = useState<boolean>(false)
 
 	return (
 		<>
@@ -57,6 +60,10 @@ export default function Calendar() {
 						isSideCalendar={isSideCalendar}
 						setIsSideCalendar={setIsSideCalendar}
 						isOpenModal={isOpenModal}
+						setIsOpenModal2={setIsOpenModal2}
+						isOpenModal2={isOpenModal2}
+						setIsOpenModal3={setIsOpenModal3}
+						isOpenModal3={isOpenModal3}
 					/>
 				</div>
 
@@ -66,6 +73,16 @@ export default function Calendar() {
 					timeIndex={timeIndex}
 					isOpen={isOpenModal}
 					setIsOpen={setIsOpenModal}
+				/>
+
+				<AddActivityModal
+					isOpen={isOpenModal2}
+					setIsOpen={setIsOpenModal2}
+				/>
+
+				<EditActivityModal
+					isOpen={isOpenModal3}
+					setIsOpen={setIsOpenModal3}
 				/>
 			</main>
 		</>

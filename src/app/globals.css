@@ -42,6 +42,7 @@ body {
 
 body {
   background-color: #212121;
+  font-family: 'SF UI Display', sans-serif;
 }
 
 .br-pink {
@@ -62,5 +63,9 @@ body {
 }
 
 .bg-fade {
- background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bg-linear {
+  background: linear-gradient(360deg, #040506 0%, rgba(30, 32, 44, 0) 100%);
 }
