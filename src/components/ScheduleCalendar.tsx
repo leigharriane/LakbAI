@@ -18,6 +18,10 @@ export default function ScheduleCalendar({
 	isSideCalendar,
 	setIsSideCalendar,
 	isOpenModal,
+	isOpenModal2,
+	setIsOpenModal2,
+	isOpenModal3,
+	setIsOpenModal3,
 }: {
 	days: tDays[]
 	setModalDate: Dispatch<SetStateAction<string>>
@@ -30,6 +34,10 @@ export default function ScheduleCalendar({
 	isSideCalendar: boolean
 	setIsSideCalendar: Dispatch<SetStateAction<boolean>>
 	isOpenModal: boolean
+	isOpenModal2: boolean
+	setIsOpenModal2: Dispatch<SetStateAction<boolean>>
+	isOpenModal3: boolean
+	setIsOpenModal3: Dispatch<SetStateAction<boolean>>
 }) {
 	const dispatch = useDispatch()
 	const scheduleData = useSelector(schedules)
@@ -79,7 +87,7 @@ export default function ScheduleCalendar({
 							className={`bg-[#69636A] shadow-md py-1 px-4 flex clex-row gap-[5px]
            rounded-full hover:shadow-xl items-center 
           ${!isSideCalendar && 'block'}`}
-							onClick={() => setIsOpenModal(!isOpenModal)}
+							onClick={() => setIsOpenModal2(!isOpenModal2)}
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -241,12 +249,18 @@ export default function ScheduleCalendar({
 				</div>
 			</div>
 			{isDeleteOpen && (
-				<div
-					className="fixed text-[12px] px-6 py-2 shadow rounded z-10 bg-dark cursor-pointer text-white"
-					style={{ top: `${deleteBox.top}px`, left: `${deleteBox.left}px` }}
-					onClick={() => deleteHandle()}
-				>
-					Delete
+				<div className='fixed text-[12px] px-6 py-2 shadow rounded z-10 bg-dark cursor-pointer text-white flex flex-col gap-2'
+					style={{ top: `${deleteBox.top}px`, left: `${deleteBox.left}px` }}>
+					<div
+						onClick={() => deleteHandle()}
+					>
+						Delete
+					</div>
+					<div
+						onClick={() => setIsOpenModal3(!isOpenModal3)}
+					>
+						Edit
+					</div>
 				</div>
 			)}
 		</>

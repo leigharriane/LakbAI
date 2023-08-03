@@ -3,13 +3,22 @@ import createSelectTimes from '@/app/util/createSelectTimes'
 import { useDispatch } from 'react-redux'
 import { tRangeColor, tScheduleDetail } from '../../index'
 import { addSchedule } from '../store/schedule'
+import Image from 'next/image'
 
-export default function AddActivityModal({ }) {
+export default function AddActivityModal
+	({
+		isOpen,
+		setIsOpen,
+	}: {
+		isOpen: boolean
+		setIsOpen: Dispatch<SetStateAction<boolean>>
+	}) {
+
 	return (
 		<div className={`${isOpen ? 'fixed' : 'hidden'} w-screen h-screen flex flex-row justify-center items-center top-0 bg-fade z-20`}>
 			<div
 				className={`
-        shadow-2xl rounded-lg z-50 top-[150px] left-8 m-auto w-[350px] bg-dark text-white flex flex-col`}
+        shadow-2xl rounded-lg z-50 top-[150px] left-8 m-auto w-[800px] bg-dark text-white flex flex-col`}
 			>
 				<div className="w-full mb-3 py-1 px-3 bg-dark rounded-t-lg">
 					<svg
@@ -26,90 +35,78 @@ export default function AddActivityModal({ }) {
 					</svg>
 				</div>
 				<form className="py-3 px-5 w-full flex flex-col gap-[15px]">
-					<div className="flex mt-3 gap-[10px] relative items-center">
-						<div className='flex flex-col gap-[4px]'>
-							<p className='text-xs'>Start Date</p>
-							<input
-								type="date"
-								value={'1-2-2023'}
-								className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
-								onChange={e => {
-									// setDate(e.target.value)
-								}}
-							/>
-						</div>
-						<div className='flex flex-col gap-[4px]'>
-							<p className='text-xs'>End Date</p>
-							<input
-								type="date"
-								value={'1-2-2023'}
-								className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
-								onChange={e => {
-									// setDate(e.target.value)
-								}}
-							/>
-						</div>
-					</div>
+
 					<div className='flex flex-col gap-[4px]'>
-						<p className='text-xs'>Country</p>
+						<p className='text-m'>Select Date</p>
 						<input
-							type="text"
-							className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
-							placeholder="Name"
-							value={'hi'}
-							// onChange={e => setTitle(e.target.value)}
-							required
+							type="date"
+							value={'1-2-2023'}
+							className="w-full outline-none bg-white text-black px-2 rounded-[6px]"
+							onChange={e => {
+								// setDate(e.target.value)
+							}}
 						/>
 					</div>
 
 					<div className='flex flex-col gap-[4px]'>
-						<p className='text-xs'>City</p>
-						<input
-							type="text"
-							className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
-							placeholder="City"
-							value={'hi'}
-							// onChange={e => setCity(e.target.value)}
-							required
-						/>
+						<p className='text-m'>Activities</p>
+						<select name="activities" id="activities" form='form' className='w-full outline-none bg-white text-black px-2 rounded-[8px]'>
+							<option value="activity1">Activity 1</option>
+							<option value="activity2">Activity 2</option>
+						</select>
 					</div>
 
-					<div className="flex mt-3 gap-[10px] relative items-center">
-						<div className='flex flex-col gap-[4px]'>
-							<p className='text-xs'>Number of Companions</p>
-							<input
-								type="number"
-								className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
-								placeholder="Number of People"
-								value={'12'}
-								// onChange={e => setPeople(e.target.valueAsNumber)}
-								required
-							/>
-						</div>
-						<div className='flex flex-col gap-[4px]'>
-							<p className='text-xs'>Overall Budget</p>
-
-							<input
-								type="number"
-								className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
-								placeholder="Price"
-								value={'12'}
-								// onChange={e => setPrice(e.target.valueAsNumber)}
-								required
-							/>
+					<div className='flex flex-col gap-[4px]'>
+						<p className='text-m'>Recommended Activities</p>
+						<div className='w-full flex flex-row justify-between items-center'>
+							<div className='rounded-[0.19056rem] relative'>
+								<Image src='/img4.png'
+									className="rounded-[0.19056rem] relative ml-[-10px]"
+									width={300}
+									height={250}
+									alt="Picture of the author"
+								/>
+								<div className='absolute top-12 left-2 flex flex-col gap-[5px]'>
+									<p>Eiffel Tower Summit Visit</p>
+									<p className='text-xs max-w-[210px]'>Take a trip to the top of the iconic Eiffel Tower and enjoy breathtaking views of Paris from the summit. Experience the city's landmarks from a unique perspective and capture memorable photos.</p>
+									<p className='font-bold'>₱1500</p>
+								</div>
+							</div>
+							<div className='rounded-[0.19056rem] relative'>
+								<Image src='/img2.png'
+									className="rounded-[0.19056rem] relative ml-[-10px]"
+									width={300}
+									height={250}
+									alt="Picture of the author"
+								/>
+								<div className='absolute top-12 left-2 flex flex-col gap-[5px]'>
+									<p>Louvre Museum Tour</p>
+									<p className='text-xs max-w-[210px]'>Discover the world-renowned Louvre Museum, home to thousands of art masterpieces including the famous Mona Lisa. Explore the vast collection, learn about art history, and admire works.</p>
+									<p className='font-bold'>₱4500</p>
+								</div>
+							</div>
+							<div className='rounded-[0.19056rem] relative'>
+								<Image src='/img3.png'
+									className="rounded-[0.19056rem] relative ml-[-10px]"
+									width={300}
+									height={250}
+									alt="river"
+								/>
+								<div className='absolute top-12 left-2 flex flex-col gap-[5px]'>
+									<p>Seine River Cruise</p>
+									<p className='text-xs max-w-[210px]'>Embark on a scenic cruise along the Seine River and admire the stunning architecture of Paris as you pass by famous landmarks such as Notre-Dame Cathedral, the Louvre, and the Eiffel Tower.</p>
+									<p className='font-bold'>₱2000</p>
+								</div>
+							</div>
 						</div>
 					</div>
-
-
-
-
 
 					<div className="w-full mb-3 mt-8 flex">
 						<button
 							className="w-full bg-blue-500 text-white px-5 py-2 text-sm rounded hover:bg-blue-700"
-							type="submit"
+							// type="submit"
 						>
-							Generate Itinerary
+							Add Activity
 						</button>
 					</div>
 				</form>
