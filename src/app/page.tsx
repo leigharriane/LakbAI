@@ -4,8 +4,16 @@ import Nav from '@/components/Nav'
 import Calendar from '@/components/Calendar'
 import { store } from '@/store'
 import { Provider } from 'react-redux'
-
+import { useEffect } from 'react'
 export default function Home() {
+
+  useEffect(()=>{
+    fetch("http://localhost:8080/api/home").then(
+      response => response.json()
+    ).then((data) => {
+      console.log(data)
+    })
+  },[])
   return (
     <Provider store={store}>
       {/* <div className="bg-dark">
