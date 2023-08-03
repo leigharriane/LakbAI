@@ -68,7 +68,7 @@ export default function AddActivityModal
 								/>
 								<div className='absolute top-12 left-2 flex flex-col gap-[5px]'>
 									<p>Eiffel Tower Summit Visit</p>
-									<p className='text-xs max-w-[210px]'>Take a trip to the top of the iconic Eiffel Tower and enjoy breathtaking views of Paris from the summit. Experience the city's landmarks from a unique perspective and capture memorable photos.</p>
+									<p className='text-xs max-w-[210px]'>Take a trip to the top of the iconic Eiffel Tower and enjoy breathtaking views of Paris from the summit. Experience the city landmarks from a unique perspective and capture memorable photos.</p>
 									<p className='font-bold'>₱1500</p>
 								</div>
 							</div>
