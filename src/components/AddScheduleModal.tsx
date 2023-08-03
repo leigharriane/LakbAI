@@ -117,7 +117,7 @@ export default function AddScheduleModal({
               <p className='text-xs'>Start Date</p>
               <input
                 type="date"
-                value={date}
+                // value={date}
                 className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
                 onChange={e => {
                   // setDate(e.target.value)
@@ -128,7 +128,7 @@ export default function AddScheduleModal({
               <p className='text-xs'>End Date</p>
               <input
                 type="date"
-                value={date}
+                // value={date}
                 className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
                 onChange={e => {
                   // setDate(e.target.value)
@@ -142,7 +142,7 @@ export default function AddScheduleModal({
               type="text"
               className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
               placeholder="Name"
-              value={title}
+              // value={title}
               // onChange={e => setTitle(e.target.value)}
               required
             />
@@ -154,7 +154,7 @@ export default function AddScheduleModal({
               type="text"
               className="w-full outline-none bg-white text-black px-2 rounded-[8px]"
               placeholder="City"
-              value={city}
+              // value={city}
               // onChange={e => setCity(e.target.value)}
               required
             />
@@ -167,7 +167,7 @@ export default function AddScheduleModal({
                 type="number"
                 className="w-[150px] outline-none bg-white text-black px-2 rounded-[6px]"
                 placeholder="Number of People"
-                value={people}
+                // value={people}
                 // onChange={e => setPeople(e.target.valueAsNumber)}
                 required
               />
@@ -179,7 +179,7 @@ export default function AddScheduleModal({
                 type="number"
                 className="w-[150px] outline-none bg-white text-black px-2 rounded-[8px]"
                 placeholder="Price"
-                value={price}
+                // value={price}
                 // onChange={e => setPrice(e.target.valueAsNumber)}
                 required
               />
