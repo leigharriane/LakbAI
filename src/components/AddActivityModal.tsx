@@ -5,8 +5,6 @@ import { tRangeColor, tScheduleDetail } from '../../index'
 import { addSchedule } from '../store/schedule'
 
 export default function AddActivityModal({ }) {
-
-
 	return (
 		<div className={`${isOpen ? 'fixed' : 'hidden'} w-screen h-screen flex flex-row justify-center items-center top-0 bg-fade z-20`}>
 			<div
